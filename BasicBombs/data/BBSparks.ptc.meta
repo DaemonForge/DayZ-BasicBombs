@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{0B1DE8E37920C40F}BasicBombs/data/BBSparks.ptc"
+ Author "desktop-tdpoqud"
+ ChangeDate 353135156
+ Configurations {
+  PTCResourceClass PC {
+  }
+  PTCResourceClass XBOX_ONE : PC {
+  }
+  PTCResourceClass PS4 : PC {
+  }
+  PTCResourceClass LINUX : PC {
+  }
+ }
+}

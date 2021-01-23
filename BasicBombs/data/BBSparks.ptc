@@ -1,0 +1,164 @@
+EffectDef {
+ MinFPS 15
+ Emitors {
+  EmitorDef Fire {
+   MaxNum 50
+   BirthRate 15
+   BirthRateRND 5
+   Angles -105.99999 0 0
+   Material "{77B4F1C96D4CB375}graphics/particles/materials/fire/fire_medium_camp_05.emat"
+   SizeMultiplier 0.015
+   SizeRND 0.025
+   RandomRotDir 0
+   RandomAngle 1
+   Velocity 0.005
+   AirResistance 1
+   GravityMultiply 0
+   LifeTime 0.3
+   LifeTimeRND 0.3
+   EffectTime 5
+  }
+  EmitorDef Fire2 {
+   ShapeType Point
+   MaxNum 20
+   BirthRate 15
+   BirthRateRND 5
+   Angles 0 -74.00001 0
+   Material "{83BCB6516091DB01}graphics/particles/materials/fire/fire_medium_camp_04.emat"
+   CenterX 0.67
+   ScaleX 0.762
+   ScaleY 0.776
+   SizeMultiplier 0.015
+   SizeRND 0.025
+   VelAngle 1
+   RandomAngle 1
+   BillboardingType None
+   Velocity 0.03
+   VelocityRND 0.001
+   AirResistance 1
+   GravityMultiply 0.001
+   GravityMultiplyRND 0
+   LifeTime 0.7
+   LifeTimeRND 0.3
+   Alpha {
+    0 0.70253 1 0.86709
+   }
+   EffectTime 5
+   Repeat 1
+  }
+  EmitorDef sparks_0 {
+   MaxNum 30
+   BirthRate 0
+   BirthRateRND 5
+   BirthRateVel 0
+   Angles 0 -44 0
+   Material "{FF2A8A73FB791A62}graphics/particles/materials/fire/sparks_05.emat"
+   SizeMultiplier 0.006
+   RandomAngle 1
+   Velocity 0.5
+   VelocityRND 0.5
+   AirResistance 1
+   AirResistanceRND 1
+   GravityMultiply 0.2
+   GravityMultiplyRND 0.1
+   LifeTime 0.07
+   LifeTimeRND 0.08
+   Color {
+    0 0.962 0.8418 0.8418 1 0.9241 0.8418 0.8291
+   }
+   Alpha {
+    0 0.64557 1 0
+   }
+   Size {
+    0 0.66456 1 0
+   }
+   EffectTime 5
+  }
+  EmitorDef sparks_1 {
+   MaxNum 30
+   BirthRate 0
+   BirthRateRND 3
+   Offset 0 0 0
+   Angles 0 -44 17
+   Material "{42FAD8F48462067C}graphics/particles/materials/fire/sparks_03.emat"
+   SizeMultiplier 0.02
+   SizeRND 0.01
+   RandomAngle 1
+   Velocity 0.3
+   VelocityRND 0.5
+   AirResistance 1
+   AirResistanceRND 1
+   GravityMultiply 0.2
+   GravityMultiplyRND 0.1
+   LifeTime 0.07
+   LifeTimeRND 0.08
+   Color {
+    0 1 1 1 1 1 1 1
+   }
+   Alpha {
+    0 0.77848 1 0
+   }
+   Size {
+    0 1 1 0
+   }
+   EffectTime 5
+  }
+  EmitorDef sparks_2 {
+   MaxNum 15
+   BirthRate 0
+   BirthRateRND 5
+   Angles 0 -44 -8
+   Material "{009C2EBAACD2D72A}graphics/particles/materials/fire/sparks1.emat"
+   SizeMultiplier 0.015
+   SizeRND 0.02
+   RandomAngle 1
+   Velocity 0.3
+   VelocityRND 0.5
+   AirResistance 1
+   AirResistanceRND 1
+   GravityMultiply 0.1
+   GravityMultiplyRND 0.2
+   LifeTime 0.05
+   LifeTimeRND 0.08
+   Color {
+    0 1 1 1 1 1 1 1
+   }
+   Alpha {
+    0 1 1 0.31646
+   }
+   Size {
+    0 1 1 0
+   }
+   EffectTime 5
+  }
+  EmitorDef sparks_3 {
+   MaxNum 30
+   BirthRate 0
+   BirthRateRND 3
+   Offset 0 0 0
+   Angles -121.72336 -18.05174 28.30281
+   Material "{42FAD8F48462067C}graphics/particles/materials/fire/sparks_03.emat"
+   SizeMultiplier 0.015
+   SizeRND 0.01
+   RandomAngle 1
+   Velocity 0.3
+   VelocityRND 0.5
+   AirResistance 1
+   AirResistanceRND 1
+   GravityMultiply 0.2
+   GravityMultiplyRND 0.1
+   LifeTime 0.05
+   LifeTimeRND 0.08
+   Color {
+    0 1 1 1 1 1 1 1
+   }
+   Alpha {
+    0 0.77848 1 0
+   }
+   Size {
+    0 1 1 0
+   }
+   EffectTime 5
+  }
+ }
+}
