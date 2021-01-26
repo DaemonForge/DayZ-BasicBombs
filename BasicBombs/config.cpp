@@ -48,7 +48,7 @@ class CfgAmmo
 	class DefaultAmmo;
 	class PipeBomb_AmmoLow: DefaultAmmo
 	{
-        hit=0.8;
+        hit=0.6;
 		indirectHit = 1;
 		indirectHitRange = 2;
 		explosive = 1;
@@ -56,7 +56,7 @@ class CfgAmmo
 		initSpeed = 3;
 		simulation = "shotShell";
 		simulationStep = 0.05;
-		soundSetExplosion[] = {"Grenade_explosion_SoundSet","Grenade_Tail_SoundSet"};
+		soundSetExplosion[] = {"PipeBombLow_explosion_SoundSet","PipeBombLow_tail_SoundSet"};
 		class DamageApplied
 		{
 			type = "FragGrenade";
@@ -76,7 +76,7 @@ class CfgAmmo
 		};
 		class NoiseExplosion
 		{
-			strength = 20;
+			strength = 100;
 			type = "shot";
 		};
 	};
@@ -90,14 +90,14 @@ class CfgAmmo
 		initSpeed = 3;
 		simulation = "shotShell";
 		simulationStep = 0.05;
-		soundSetExplosion[] = {"Grenade_explosion_SoundSet","Grenade_Tail_SoundSet"};
+		soundSetExplosion[] = {"PipeBombHigh_explosion_SoundSet","PipeBombHigh_tail_SoundSet"};
 		class DamageApplied
 		{
 			type = "FragGrenade";
 			bleedThreshold = 0.6;
 			class Health
 			{
-				damage = 300;
+				damage = 250;
 			};
 			class Blood
 			{
@@ -110,13 +110,13 @@ class CfgAmmo
 		};
 		class NoiseExplosion
 		{
-			strength = 300;
+			strength = 150;
 			type = "shot";
 		};
 	};
 	class PipeBomb_Ammo: DefaultAmmo
 	{
-        hit=0.8;
+        hit=0.7;
 		indirectHit = 1;
 		indirectHitRange = 4;
 		explosive = 1;
@@ -124,14 +124,14 @@ class CfgAmmo
 		initSpeed = 3;
 		simulation = "shotShell";
 		simulationStep = 0.05;
-		soundSetExplosion[] = {"Grenade_explosion_SoundSet","Grenade_Tail_SoundSet"};
+		soundSetExplosion[] = {"PipeBombMid_explosion_SoundSet","PipeBombMid_tail_SoundSet"};
 		class DamageApplied
 		{
 			type = "FragGrenade";
 			bleedThreshold = 0.6;
 			class Health
 			{
-				damage = 200;
+				damage = 175;
 			};
 			class Blood
 			{
@@ -367,3 +367,112 @@ class CfgVehicles
 	};
 };
 
+
+class CfgSoundSets
+{
+	class PipeBombLow_explosion_SoundSet
+	{
+		soundShaders[]=
+		{
+			"Grenade_closeExplosion_SoundShader",
+			"Grenade_midExplosion_SoundShader",
+			"Grenade_distExplosion_SoundShader",
+			"Grenade_debri_SoundShader"
+		};
+		volumeFactor=0.9;
+		volumeCurve="InverseSquare2Curve";
+		spatial=1;
+		doppler=0;
+		loop=0;
+		sound3DProcessingType="ExplosionMedium3DProcessingType";
+		distanceFilter="explosionDistanceFreqAttenuationFilter";
+	};
+	class PipeBombLow_tail_SoundSet
+	{
+		soundShaders[]=
+		{
+			"Grenade_tailForest_SoundShader",
+			"Grenade_tailMeadows_SoundShader",
+			"Grenade_tailHouses_SoundShader",
+			"Grenade_tailInterior_SoundShader"
+		};
+		volumeFactor=0.39999999;
+		volumeCurve="InverseSquare2Curve";
+		spatial=1;
+		doppler=0;
+		loop=0;
+		soundShadersLimit=2;
+		sound3DProcessingType="ExplosionMediumTail3DProcessingType";
+		distanceFilter="explosionTailDistanceFreqAttenuationFilter";
+	};
+	class PipeBombMid_explosion_SoundSet
+	{
+		soundShaders[]=
+		{
+			"Grenade_closeExplosion_SoundShader",
+			"Grenade_midExplosion_SoundShader",
+			"Grenade_distExplosion_SoundShader",
+			"Grenade_debri_SoundShader"
+		};
+		volumeFactor=1.5;
+		volumeCurve="InverseSquare2Curve";
+		spatial=1;
+		doppler=0;
+		loop=0;
+		sound3DProcessingType="ExplosionMedium3DProcessingType";
+		distanceFilter="explosionDistanceFreqAttenuationFilter";
+	};
+	class PipeBombMid_tail_SoundSet
+	{
+		soundShaders[]=
+		{
+			"Grenade_tailForest_SoundShader",
+			"Grenade_tailMeadows_SoundShader",
+			"Grenade_tailHouses_SoundShader",
+			"Grenade_tailInterior_SoundShader"
+		};
+		volumeFactor=0.6;
+		volumeCurve="InverseSquare2Curve";
+		spatial=1;
+		doppler=0;
+		loop=0;
+		soundShadersLimit=2;
+		sound3DProcessingType="ExplosionMediumTail3DProcessingType";
+		distanceFilter="explosionTailDistanceFreqAttenuationFilter";
+	};
+	class PipeBombHigh_explosion_SoundSet
+	{
+		soundShaders[]=
+		{
+			"Grenade_closeExplosion_SoundShader",
+			"Grenade_midExplosion_SoundShader",
+			"Grenade_distExplosion_SoundShader",
+			"Grenade_debri_SoundShader"
+		};
+		volumeFactor=2.9;
+		volumeCurve="InverseSquare2Curve";
+		spatial=1;
+		doppler=0;
+		loop=0;
+		sound3DProcessingType="ExplosionMedium3DProcessingType";
+		distanceFilter="explosionDistanceFreqAttenuationFilter";
+	};
+	class PipeBombHigh_tail_SoundSet
+	{
+		soundShaders[]=
+		{
+			"Grenade_tailForest_SoundShader",
+			"Grenade_tailMeadows_SoundShader",
+			"Grenade_tailHouses_SoundShader",
+			"Grenade_tailInterior_SoundShader"
+		};
+		volumeFactor=1.4;
+		volumeCurve="InverseSquare2Curve";
+		spatial=1;
+		doppler=0;
+		loop=0;
+		soundShadersLimit=2;
+		sound3DProcessingType="ExplosionMediumTail3DProcessingType";
+		distanceFilter="explosionTailDistanceFreqAttenuationFilter";
+	};
+};
