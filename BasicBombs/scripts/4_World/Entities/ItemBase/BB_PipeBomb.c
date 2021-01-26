@@ -186,19 +186,24 @@ class BB_PipeBomb extends Grenade_Base
 					GetGame().ObjectDelete(theFuse);
 				}
 			}
+			GetGame().AdminLog("[BasicBombs] " + this.GetType() + " Explosion - Dud: " + rndExplosion + " - Ignited By: " + IgnitedById + " - At: " + this.GetPosition());
+
 			return;
 		} else if ( rndExplosion <= 0.40){
 			m_hasExploded = true;
 			Explode(DT_EXPLOSION, "PipeBomb_AmmoLow");
+			GetGame().AdminLog("[BasicBombs] " + this.GetType() + " Explosion - Low: " + rndExplosion + " - Ignited By: " + IgnitedById + " - At: " + this.GetPosition());
 		} else if ( rndExplosion >= 0.95){
 			m_hasExploded = true;
 			Explode(DT_EXPLOSION, "PipeBomb_AmmoHigh");
+			GetGame().AdminLog("[BasicBombs] " + this.GetType() + " Explosion - High: " + rndExplosion + " - Ignited By: " + IgnitedById + " - At: " + this.GetPosition());
 		} else {
 			m_hasExploded = true;
 			Explode(DT_EXPLOSION, "");
+			GetGame().AdminLog("[BasicBombs] " + this.GetType() + " Explosion - Mid: " + rndExplosion + " - Ignited By: " + IgnitedById + " - At: " + this.GetPosition());
+		
 		}
 		
-		GetGame().AdminLog("[BasicBombs] " + this.GetType() + " Explosion - " + rndExplosion + " - Ignited By: " + IgnitedById + " - At: " + this.GetPosition());
 		
 		OnExplode();
 		SetSynchDirty();
