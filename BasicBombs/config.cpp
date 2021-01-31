@@ -379,7 +379,7 @@ class CfgSoundSets
 			"Grenade_distExplosion_SoundShader",
 			"Grenade_debri_SoundShader"
 		};
-		volumeFactor=0.9;
+		volumeFactor=1.2;
 		volumeCurve="InverseSquare2Curve";
 		spatial=1;
 		doppler=0;
@@ -396,7 +396,7 @@ class CfgSoundSets
 			"Grenade_tailHouses_SoundShader",
 			"Grenade_tailInterior_SoundShader"
 		};
-		volumeFactor=0.39999999;
+		volumeFactor=0.8;
 		volumeCurve="InverseSquare2Curve";
 		spatial=1;
 		doppler=0;
@@ -414,7 +414,7 @@ class CfgSoundSets
 			"Grenade_distExplosion_SoundShader",
 			"Grenade_debri_SoundShader"
 		};
-		volumeFactor=1.5;
+		volumeFactor=2.2;
 		volumeCurve="InverseSquare2Curve";
 		spatial=1;
 		doppler=0;
@@ -431,7 +431,7 @@ class CfgSoundSets
 			"Grenade_tailHouses_SoundShader",
 			"Grenade_tailInterior_SoundShader"
 		};
-		volumeFactor=0.6;
+		volumeFactor=1.0;
 		volumeCurve="InverseSquare2Curve";
 		spatial=1;
 		doppler=0;
@@ -449,7 +449,7 @@ class CfgSoundSets
 			"Grenade_distExplosion_SoundShader",
 			"Grenade_debri_SoundShader"
 		};
-		volumeFactor=2.9;
+		volumeFactor=3.6;
 		volumeCurve="InverseSquare2Curve";
 		spatial=1;
 		doppler=0;
@@ -466,7 +466,7 @@ class CfgSoundSets
 			"Grenade_tailHouses_SoundShader",
 			"Grenade_tailInterior_SoundShader"
 		};
-		volumeFactor=1.4;
+		volumeFactor=1.9;
 		volumeCurve="InverseSquare2Curve";
 		spatial=1;
 		doppler=0;
