@@ -4,8 +4,9 @@ class BasicBombsConfig
 	protected static string ConfigPATH = DirPATH + "\\settings.json";
 	string ConfigVersion = "1";
 	
-	float CapOnPipeSpawnRate = 0.5;
-	float HackSawDamageOnCraft = 100;
+	float FirstCapOnPipeSpawnRate = 1.0;
+	float SecondCapOnPipeSpawnRate = 0.5;
+	float HackSawDamageOnCraft = 33;
 	
 	
 	void Load(){
@@ -18,7 +19,7 @@ class BasicBombsConfig
 					Save();
 				}
 			}else{ //File does not exist create file
-				if (FileExist(DirPATH)){
+				if (!FileExist(DirPATH)){
 					MakeDirectory(DirPATH);
 				}
 				Save();

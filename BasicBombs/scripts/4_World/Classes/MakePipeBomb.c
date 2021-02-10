@@ -55,21 +55,7 @@ class MakePipeBomb extends RecipeBase
 	override bool CanDo(ItemBase ingredients[], PlayerBase player)//final check for recipe's validity
 	{
 		BB_PipeBomb_Shell bomb;
-		Class.CastTo(bomb, ingredients[0]);
-		if (bomb){
-			if (bomb.GetLiquidType() == LIQUID_GASOLINE){
-			}else {
-				Print("bomb does not have gas");
-			}
-			if (!bomb.HasFuseAttached()){
-				Print("bomb does not have fuse");
-			
-			}
-		} else {
-			
-			Print("bomb is NULL");
-		}
-		
+		Class.CastTo(bomb, ingredients[0]);		
 		if ( bomb && bomb.GetLiquidType() == LIQUID_GASOLINE && bomb.HasEndCapAttached() && bomb.HasBlastingCapAttached())
 		{
 			return true;
@@ -119,13 +105,13 @@ class MakePipeBombShell extends RecipeBase
 		//ingredient 2
 		InsertIngredient(1,"Hacksaw");//you can insert multiple ingredients this way
 		
-		m_IngredientAddHealth[1] = -33;// 0 = do nothing
+		m_IngredientAddHealth[1] = GetBasicBombsConfig().GetHackSawDamage();// 0 = do nothing
 		m_IngredientSetHealth[1] = -1; // -1 = do nothing
 		m_IngredientAddQuantity[1] = 0;// 0 = do nothing
 		m_IngredientDestroy[1] = false;// false = do nothing
 		m_IngredientUseSoftSkills[1] = false;// set 'true' to allow modification of the values by softskills on this ingredient
 		m_MinDamageIngredient[1] = -1;//-1 = disable check
-		m_MaxDamageIngredient[1] = 1;//-1 = disable check
+		m_MaxDamageIngredient[1] = -1;//-1 = disable check
 		
 		
 		//----------------------------------------------------------------------------------------------------------------------
@@ -151,9 +137,13 @@ class MakePipeBombShell extends RecipeBase
 	override void Do(ItemBase ingredients[], PlayerBase player,array<ItemBase> results, float specialty_weight)//gets called upon recipe's completion
 	{
 		BB_PipeBomb_Shell shell = BB_PipeBomb_Shell.Cast(results[0]);
-		if (shell){
-			float CreateCapWithPipe = Math.RandomFloat(0,1);
-			if (CreateCapWithPipe > 0.5){
+		if (shell && GetGame().IsServer()){
+			float CreateCapWithPipe1 = Math.RandomFloat(0,1);
+			if (CreateCapWithPipe1 < GetBasicBombsConfig().FirstCapOnPipeSpawnRate){
+				shell.GetInventory().CreateAttachment("BB_PipeCap");
+			}
+			float CreateCapWithPipe2 = Math.RandomFloat(0,1);
+			if (CreateCapWithPipe2 < GetBasicBombsConfig().SecondCapOnPipeSpawnRate){
 				shell.GetInventory().CreateAttachment("BB_PipeCap");
 			}
 		}
