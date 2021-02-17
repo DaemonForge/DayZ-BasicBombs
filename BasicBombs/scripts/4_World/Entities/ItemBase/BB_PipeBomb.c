@@ -169,6 +169,13 @@ class BB_PipeBomb extends Grenade_Base
 		if (m_hasExploded) {
 			return;
 		}
+		
+		vector CurPos = this.GetPosition();
+		
+		vector AdjustedPos = CurPos + "0 0.15 0";
+		
+		this.SetPosition(AdjustedPos);
+		
 		float rndExplosion = Math.RandomFloat(0,1);
 		if (GetHealth("","") > 260){
 			rndExplosion = rndExplosion + 0.15;
