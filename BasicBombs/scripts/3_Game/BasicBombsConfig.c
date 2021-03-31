@@ -41,11 +41,11 @@ class BasicBombsConfig
 ref BasicBombsConfig m_BasicBombsConfig;
 
 //Helper function to return Config
-static ref BasicBombsConfig GetBasicBombsConfig()
+static BasicBombsConfig GetBasicBombsConfig()
 {
 	if (!m_BasicBombsConfig)
 	{
-		m_BasicBombsConfig = new ref BasicBombsConfig;
+		m_BasicBombsConfig = new BasicBombsConfig;
 			
 		if ( GetGame().IsServer() ){
 			m_BasicBombsConfig.Load();
