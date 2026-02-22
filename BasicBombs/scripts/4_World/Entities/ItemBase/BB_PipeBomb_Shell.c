@@ -98,7 +98,7 @@ class BB_PipeBomb_Shell extends Bottle_Base{
 	}
 	
 	
-	void EEItemAttached(EntityAI item, string slot_name)
+	override void EEItemAttached(EntityAI item, string slot_name)
 	{
 		super.EEItemAttached(item, slot_name);
 		if (slot_name == "Att_BB_Fuse"){
@@ -114,7 +114,7 @@ class BB_PipeBomb_Shell extends Bottle_Base{
 	}
 	
 	
-	void EEItemDetached(EntityAI item, string slot_name)
+	override void EEItemDetached(EntityAI item, string slot_name)
 	{
 		super.EEItemDetached(item, slot_name);
 		

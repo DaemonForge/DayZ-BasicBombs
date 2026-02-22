@@ -45,7 +45,7 @@ class IngitePipeBombInHand extends RecipeBase
 		ItemBase item = ItemBase.Cast(ingredients[0]);
 		BB_PipeBomb target_item = BB_PipeBomb.Cast(ingredients[1]);
 		if (item && target_item){
-			if ( item.CanIgniteItem( target_item ) && !target_item.IsIgnited() && target_item.GetFuseCount() > 1)
+			if ( item.CanIgniteItem( target_item ) && !target_item.IsBBIgnited() && target_item.GetFuseCount() > 1)
 			{
 				return true;
 			} else {

@@ -1,6 +1,6 @@
 modded class PluginRecipesManagerBase extends PluginBase
 {	
-	void RegisterRecipies()
+	override void RegisterRecipies()
 	{
 		super.RegisterRecipies();
 		RegisterRecipe(new MakePipeBomb);

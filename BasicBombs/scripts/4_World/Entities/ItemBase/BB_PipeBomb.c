@@ -90,12 +90,12 @@ class BB_PipeBomb extends Grenade_Base
 	
 	override bool CanBeIgnitedBy( EntityAI igniter = NULL )
 	{
-		if ( GetHierarchyParent() || IsIgnited() ) return false;
+		if ( GetHierarchyParent() || IsBBIgnited() ) return false;
 		
 		return HasFuse();
 	}
 	
-	bool IsIgnited(){
+	bool IsBBIgnited(){
 		return m_isIgnited;
 	}
 	
@@ -218,7 +218,7 @@ class BB_PipeBomb extends Grenade_Base
 	}
 	
 	
-	void EEItemAttached(EntityAI item, string slot_name)
+	override void EEItemAttached(EntityAI item, string slot_name)
 	{
 		super.EEItemAttached(item, slot_name);
 		if (slot_name == "Att_BB_Fuse"){
@@ -228,7 +228,7 @@ class BB_PipeBomb extends Grenade_Base
 	}
 	
 	
-	void EEItemDetached(EntityAI item, string slot_name)
+	override void EEItemDetached(EntityAI item, string slot_name)
 	{
 		super.EEItemDetached(item, slot_name);
 		
